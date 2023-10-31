@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">IminPrinterDemo</string>
+    <string name="Load_Bmp_btn">Set load bitmap</string>
+    <string name="Print_Bmp_btn">Print bitmap</string>
+    <string name="SelectBmpFile">BMP File</string>
+    <string name="ClearPath_btn">Clear Path</string>
+    <string name="Bmp_path_et">Show the path of bmp file</string>
+    <string name="Download_bmp_prompt">Download the bitmap successfully, please restart the printer!</string>
+    <string name="no_read_write_permission">Failed to open serial port: no serial port read / write permission!</string>
+    <string name="unknown_error">Failed to open serial port: unknown error!</string>
+    <string name="parameter_error">Failed to open serial port: parameter error!</string>
+    <string name="text_print">欢迎光临(简体中文)\n歡迎光臨(繁体中文)\nWelcome(英文)\n어서 오세요.(韩文)\nいらっしゃいませ(日文)\nWillkommen in der(德文)\nSouhaits de bienvenue(法文)\nยินดีต้อนรับสู่(泰文)\nДобро пожаловать(俄文)\nBenvenuti a(意大利语)\nvítejte v(捷克文)\nBEM - vindo Ao(葡萄牙文)\nបោះពុម្ពសំបុត្រតូចមួយដើម្បីរុំ(高棉语)\nພິມຕົsmallວນ້ອຍເພື່ອຫໍ່(老挝语)\n</string>
+
+    <string name="burn_in">老化测试</string>
+    <string name="cancel">取消</string>
+    <string name="start">开始</string>
+    <string name="pause">暂停</string>
+    <string name="conti">继续</string>
+    <string name="sum">总计：</string>
+    <string name="interval_time">打印间隔：</string>
+    <string name="number_of_prints">打印次数：</string>
+    <string name="ms">毫秒</string>
+    <string name="times">次</string>
+
+    <string name="anti_white">反白</string>
+
+    <string name="setting_fonts">设置字库</string>
+    <string name="select_fonts">选择字库：</string>
+    <string name="print">打印</string>
+    <string name="link_appstore">跳转应用商店</string>
+</resources>
