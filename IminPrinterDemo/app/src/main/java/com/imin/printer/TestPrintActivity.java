@@ -328,6 +328,7 @@ public class TestPrintActivity extends AppCompatActivity {
         });
         if (data == null) {
             data = new ArrayList<>();
+            data.add(new TestBean(-2, "print test receipt"));
             data.add(new TestBean(0, "init printer"));
             data.add(new TestBean(-1, "reset device"));
             data.add(new TestBean(1, "get printer status"));
@@ -409,6 +410,41 @@ public class TestPrintActivity extends AppCompatActivity {
                         try {
                             Log.i("XGH", "position:111   " + pos);
                             switch (pos) {
+                                case -2:
+                                    // print image
+                                    Bitmap testBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.icona);
+                                    testBitmap = getBlackWhiteBitmap(testBitmap);
+                                    List<Bitmap> mBitmapList10 = new ArrayList<>();
+                                    mBitmapList10.add(testBitmap);
+                                    mIminPrintUtils.printMultiBitmap(mBitmapList10, 1);
+                                    mIminPrintUtils.printAndFeedPaper(100);
+
+                                    String s = "\u001B@\u001C&\u001Ba1\u001BE\u0001!! Here's where East-meet-West !!\u001BE\u0000\n" +
+                                            "\n" +
+                                            "\u001Ba1------------------------------------------------\n" +
+                                            "Invoice (Duplicate Invoice)\n" +
+                                            "\u001Ba1------------------------------------------------\n" +
+                                            "\u001BE\u0000\u001Ba0Table\t: AL101 (Counter) \n" +
+                                            "Invoice\t: #3434-00000020\n" +
+                                            "Date\t: 31/Oct/2023 11:25 AM\n" +
+                                            "Staff\t: nawal owner [QA PRD]\n" +
+                                            "\u001Ba1------------------------------------------------\n" +
+                                            "\u001Ba0Item                   Qty  U.P (RM)  Price (RM)\n" +
+                                            "\u001Ba1------------------------------------------------\n" +
+                                            "\u001BE\u0001\u001Ba0Hot Tea                  1      12.99      12.99\u001BE\u0000\n" +
+                                            "\u001Ba1------------------------------------------------\n" +
+                                            "\u001Ba0                             Subtotal      12.99\n" +
+                                            "\u001Ba0                   10% Service Charge       1.30\n" +
+                                            "\u001Ba0                               6% VAT       0.86\n" +
+                                            "\u001Ba0                             Rounding       0.00\n" +
+                                            "\u001BE\u0001\u001Ba0                                Total      15.15\u001BE\u0000\u001Ba0                                 Cash      15.15\n" +
+                                            "\u001Ba0                               Change       0.00\n" +
+                                            "\n" +
+                                            "\u001Ba1\u001BE\u0001!! We Hope You Enjoy Your Meal !!\u001BE\u0000\n" +
+                                            "\n" +
+                                            "\u001Ba1Powered by HUBBO POS\u001Bd\u0007\u001DV\u0000";
+                                    mIminPrintUtils.sendRAWData(s.getBytes());
+                                    break;
                                 case -1:
                                     mIminPrintUtils.resetDevice();
                                     break;
